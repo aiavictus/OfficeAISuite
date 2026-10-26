@@ -1,0 +1,31 @@
+{
+"profiles": {
+"cpu_16gb": {
+"description": "16 GB RAM, CPU-only profile for i5-1135G7 and i3-14100",
+"port": 8081,
+"ctx": 4096,
+"threads": 4,
+"threads_batch": 8,
+"batch": 256,
+"gpu_layers": 0
+},
+"high_ram_32gb": {
+"description": "32 GB or more RAM, CPU-only",
+"port": 8081,
+"ctx": 8192,
+"threads": 4,
+"threads_batch": 8,
+"batch": 512,
+"gpu_layers": 0
+},
+"light": {
+"description": "Lower-memory inference profile",
+"port": 8081,
+"ctx": 2048,
+"threads": 4,
+"threads_batch": 4,
+"batch": 128,
+"gpu_layers": 0
+}
+}
+}

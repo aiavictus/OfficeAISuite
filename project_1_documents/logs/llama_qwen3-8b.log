@@ -1,0 +1,19 @@
+0.00.076.262 I srv  llama_server: initializing ...
+0.00.076.277 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.076.916 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.082.395 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\Qwen3-8B-Q4_K_M.gguf'
+0.00.842.072 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.16.048.339 I cmn          init: llama threadpool init, n_threads = 4
+0.16.853.980 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.16.871.094 I srv  llama_server: model loaded
+0.16.871.106 I srv  llama_server: listening on http://127.0.0.1:8091
+0.18.343.111 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.18.343.207 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.24.942.288 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    256, progress = 0.47, t =   6.60 s / 38.79 tokens per second
+0.31.794.571 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    512, progress = 0.94, t =  13.45 s / 38.06 tokens per second
+0.50.485.962 I slot print_timing: id  0 | task 0 | prompt eval time =   14641.48 ms /   542 tokens (   27.01 ms per token,    37.02 tokens per second)
+0.50.485.974 I slot print_timing: id  0 | task 0 |        eval time =   17501.23 ms /    92 tokens (  192.32 ms per token,     5.20 tokens per second)
+0.50.485.976 I slot print_timing: id  0 | task 0 |       total time =   32142.71 ms /   634 tokens
+0.50.485.977 I slot print_timing: id  0 | task 0 |    graphs reused =         91
+0.50.485.979 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.50.486.128 I slot      release: id  0 | task 0 | stop processing: n_tokens = 633, truncated = 0

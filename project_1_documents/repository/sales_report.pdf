@@ -1,0 +1,71 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+2 0 obj
+<< /Length 451 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 780 Td
+(ACME Sales Report 2025 - Page 1 \(January to March\)) Tj T*
+() Tj T*
+(Month    Region  Product   Units  Revenue) Tj T*
+(2025-01  North   Widget      100     2000) Tj T*
+(2025-01  South   Widget       80     1600) Tj T*
+(2025-02  North   Gadget       50     1500) Tj T*
+(2025-02  South   Gadget       40     1200) Tj T*
+(2025-03  North   Widget      120     2400) Tj T*
+(2025-03  South   Gizmo        30      900) Tj T*
+ET
+endstream
+endobj
+3 0 obj
+<< /Length 495 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+50 780 Td
+(ACME Sales Report 2025 - Page 2 \(April to June\)) Tj T*
+() Tj T*
+(Month    Region  Product   Units  Revenue) Tj T*
+(2025-04  North   Gizmo        60     1800) Tj T*
+(2025-04  South   Widget       90     1800) Tj T*
+(2025-05  North   Gadget       70     2100) Tj T*
+(2025-05  South   Gizmo        20      600) Tj T*
+(2025-06  North   Widget      110     2200) Tj T*
+(2025-06  South   Gadget       45     1350) Tj T*
+() Tj T*
+(Prepared by the finance team.) Tj T*
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 6 0 R /MediaBox [0 0 612 842] /Contents 2 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 6 0 R /MediaBox [0 0 612 842] /Contents 3 0 R /Resources << /Font << /F1 1 0 R >> >> >>
+endobj
+6 0 obj
+<< /Type /Pages /Kids [4 0 R 5 0 R] /Count 2 >>
+endobj
+7 0 obj
+<< /Type /Catalog /Pages 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000077 00000 n 
+0000000579 00000 n 
+0000001125 00000 n 
+0000001251 00000 n 
+0000001377 00000 n 
+0000001440 00000 n 
+trailer
+<< /Size 8 /Root 7 0 R >>
+startxref
+1489
+%%EOF

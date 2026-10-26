@@ -1,0 +1,16 @@
+0.00.051.747 I srv  llama_server: initializing ...
+0.00.051.759 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.052.245 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.056.736 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\Llama-3.2-3B-Instruct-Q4_K_M.gguf'
+0.03.600.979 I cmn          init: llama threadpool init, n_threads = 4
+0.03.989.571 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.04.003.309 I srv  llama_server: model loaded
+0.04.003.321 I srv  llama_server: listening on http://127.0.0.1:8081
+0.04.293.598 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.04.293.704 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.05.005.352 I slot print_timing: id  0 | task 0 | prompt eval time =     629.09 ms /    42 tokens (   14.98 ms per token,    66.76 tokens per second)
+0.05.005.364 I slot print_timing: id  0 | task 0 |        eval time =      82.50 ms /     2 tokens (   82.50 ms per token,    12.12 tokens per second)
+0.05.005.366 I slot print_timing: id  0 | task 0 |       total time =     711.60 ms /    44 tokens
+0.05.005.368 I slot print_timing: id  0 | task 0 |    graphs reused =          1
+0.05.005.370 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.05.005.428 I slot      release: id  0 | task 0 | stop processing: n_tokens = 43, truncated = 0

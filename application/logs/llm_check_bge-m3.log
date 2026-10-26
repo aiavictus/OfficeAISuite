@@ -1,0 +1,14 @@
+0.00.051.032 I srv  llama_server: initializing ...
+0.00.051.042 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.051.502 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.063.455 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\bge-m3-q8_0.gguf'
+0.01.777.042 W load: model vocab missing newline token, using special_pad_id instead
+0.02.272.122 I cmn          init: llama threadpool init, n_threads = 4
+0.02.272.181 W init: embeddings required but some input tokens were not marked as outputs -> overriding
+0.02.383.436 W srv    load_model: speculative decoding not supported by this context
+0.02.383.450 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.02.389.184 I srv  llama_server: model loaded
+0.02.389.198 I srv  llama_server: listening on http://127.0.0.1:8081
+0.04.325.483 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.04.325.566 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.04.399.687 I slot      release: id  0 | task 0 | stop processing: n_tokens = 5, truncated = 0

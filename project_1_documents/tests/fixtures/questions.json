@@ -1,0 +1,135 @@
+{
+  "truth": {
+    "total": 19450,
+    "north": 12000,
+    "south": 7450,
+    "q1": 9600,
+    "q2": 9850
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "files": [
+        "sales_2025.xlsx"
+      ],
+      "question": "What is the total revenue on the Sales sheet?",
+      "expected": 19450,
+      "type": "number",
+      "cite": "sales_2025.xlsx / Sales"
+    },
+    {
+      "id": "q2",
+      "files": [
+        "sales_2025.csv"
+      ],
+      "question": "What is the total revenue for the North region?",
+      "expected": 12000,
+      "type": "number",
+      "cite": "sales_2025.csv"
+    },
+    {
+      "id": "q3",
+      "files": [
+        "sales_2025.csv"
+      ],
+      "question": "What is the average revenue per row?",
+      "expected": 1620.8333333333333,
+      "type": "number",
+      "cite": "sales_2025.csv"
+    },
+    {
+      "id": "q4",
+      "files": [
+        "sales_2025.csv"
+      ],
+      "question": "How many Widget units were sold in total?",
+      "expected": 500,
+      "type": "number",
+      "cite": "sales_2025.csv"
+    },
+    {
+      "id": "q5",
+      "files": [
+        "sales_2025.xlsx"
+      ],
+      "question": "What is the annual target for South?",
+      "expected": 8000,
+      "type": "number",
+      "cite": "sales_2025.xlsx / Targets"
+    },
+    {
+      "id": "q6",
+      "files": [
+        "sales_report.pdf"
+      ],
+      "question": "What was the revenue for Gizmo in 2025-04 in the North region?",
+      "expected": 1800,
+      "type": "number",
+      "cite": "sales_report.pdf page 2"
+    },
+    {
+      "id": "q7",
+      "files": [
+        "sales_report.pdf"
+      ],
+      "question": "Who prepared the report?",
+      "expected": "finance team",
+      "type": "text",
+      "cite": "sales_report.pdf page 2"
+    },
+    {
+      "id": "q8",
+      "files": [
+        "scanned_invoice.pdf"
+      ],
+      "question": "What is the total due on the invoice?",
+      "expected": "1840",
+      "type": "text",
+      "cite": "scanned_invoice.pdf page 1",
+      "needs_ocr": true
+    },
+    {
+      "id": "q9",
+      "files": [
+        "mixed_report.pdf"
+      ],
+      "question": "What is the warehouse code?",
+      "expected": "ZX-4471",
+      "type": "text",
+      "cite": "mixed_report.pdf page 2",
+      "needs_ocr": true
+    },
+    {
+      "id": "q10",
+      "files": [
+        "sales_2025.csv",
+        "sales_report.pdf"
+      ],
+      "question": "Do the CSV and PDF agree on Q1 revenue?",
+      "expected": 9600,
+      "type": "number",
+      "cite": "both files",
+      "note": "cross-file"
+    },
+    {
+      "id": "u1",
+      "files": [
+        "sales_2025.csv"
+      ],
+      "question": "What is Asha's salary?",
+      "expected": null,
+      "type": "unanswerable",
+      "note": "employees.csv is NOT selected: must say not found"
+    },
+    {
+      "id": "u2",
+      "files": [
+        "sales_2025.csv"
+      ],
+      "question": "What was the revenue in July 2025?",
+      "expected": null,
+      "type": "unanswerable",
+      "note": "no July data exists"
+    }
+  ]
+}

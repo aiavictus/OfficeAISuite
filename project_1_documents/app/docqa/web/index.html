@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Document Q&amp;A (offline)</title>
+<style>
+:root{color-scheme:light;--bg:#F7F4ED;--surface:#fff;--panel:#E9EFE3;--text:#29352D;--muted:#5F6B5E;--border:#E2E5DB;--accent:#315C45;--on:#fff;--soft:#DCE8D8;--glow:rgba(160,185,132,.22);--bar:rgba(247,244,237,.82);--warn:#7a4d00;--warnbg:#FFF4DC;--bad:#a8322a;--badbg:#FCECEA;--ok:#2d6a3e;--code:#18211c;--codetx:#e7efe3;--shadow:0 8px 28px rgba(30,45,30,.05);--leaf:#719C58}
+[data-theme=dark]{color-scheme:dark;--bg:#151B18;--surface:#202923;--panel:#29382E;--text:#F1F3EC;--muted:#A4B0A5;--border:#354239;--accent:#D7F28A;--on:#1b241e;--soft:#304439;--glow:rgba(143,180,111,.12);--bar:rgba(21,27,24,.82);--warn:#f0c674;--warnbg:#3a3220;--bad:#f2a09a;--badbg:#3c2523;--ok:#9fd9a8;--code:#0f1512;--codetx:#dbe8d6;--shadow:0 8px 28px rgba(0,0,0,.25);--leaf:#D7F28A}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,system-ui,"Segoe UI",sans-serif;transition:background .3s,color .3s}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 8% 4%,var(--glow),transparent 45%),radial-gradient(ellipse at 92% 92%,var(--glow),transparent 40%)}
+button,select,input,textarea{font:inherit;color:inherit}button{cursor:pointer}
+.shell{display:grid;grid-template-columns:350px minmax(0,1fr);min-height:100vh}
+.shell.collapsed{grid-template-columns:minmax(0,1fr)}.shell.collapsed .side{display:none}
+.side{position:sticky;top:0;height:100vh;overflow:auto;padding:22px 18px;border-right:1px solid var(--border);background:var(--surface)}
+.brand{font:800 22px Georgia,serif;letter-spacing:-.5px;margin:0 0 4px}.brand b{color:var(--leaf)}
+.lead{color:var(--muted);font-size:13px;margin:0 0 16px}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:12px 24px;background:var(--bar);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.top h1{font:400 20px Georgia,serif;letter-spacing:-.4px;margin:0;flex:1}
+.ib{width:38px;height:38px;padding:0;border-radius:50%;display:grid;place-items:center;font-size:16px}
+.content{padding:24px;max-width:960px;margin:0 auto}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:18px;box-shadow:var(--shadow);margin-bottom:16px;min-width:0}
+.card h2{margin:0 0 12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+button{padding:8px 14px;border:1px solid var(--border);border-radius:12px;background:var(--surface);transition:transform .2s,border-color .2s}
+button:hover:not(:disabled){transform:translateY(-1px);border-color:var(--accent)}button:disabled{opacity:.5;cursor:not-allowed}
+button.primary{background:var(--accent);color:var(--on);border-color:var(--accent)}button.danger{color:var(--bad)}
+.ib:hover:not(:disabled){transform:translateY(-2px)}
+select,input[type=search]{border:1px solid var(--border);border-radius:12px;padding:8px 11px;background:var(--bg);box-shadow:inset 0 1px 3px rgba(0,0,0,.05)}
+input[type=search]{flex:1;min-width:110px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.mini{font-size:12px;color:var(--muted)}
+.hint{color:var(--muted);font-size:12px;margin:8px 0 0}
+.tag{font-size:11px;padding:2px 8px;border-radius:99px;background:var(--panel);color:var(--muted);white-space:nowrap}
+.tag.tmp{background:var(--warnbg);color:var(--warn)}.tag.saved{background:var(--soft);color:var(--ok)}
+.chip{padding:6px 12px;border-radius:99px;background:var(--panel);border-color:transparent;font-size:13px}
+.hero{padding:34px 0 18px}.eyebrow{color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.2em;margin:0}
+.hero h2{margin:8px 0;font:400 clamp(32px,5vw,48px)/1.1 Georgia,serif;letter-spacing:-1.5px}.hero h2 span{color:var(--leaf)}
+.composer{border:1px solid var(--border);border-radius:22px;background:var(--surface);padding:14px;box-shadow:var(--shadow)}
+.composer textarea{width:100%;min-height:84px;border:0;background:transparent;resize:vertical;outline:none;font-size:16px}
+.composer .bar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.ainote{font-size:12.5px;color:var(--muted);margin:10px 6px 0}
+#status{min-height:22px;font-size:13px;color:var(--muted);margin:12px 4px}#status.err{color:var(--bad)}
+.drop{position:relative;display:grid;place-items:center;gap:2px;text-align:center;padding:10px 12px;border:1.5px dashed var(--border);border-radius:18px;background:var(--bg);transition:border-color .2s,background .2s}
+.drop:hover,.drop.over,.drop:focus-within{border-color:var(--accent);background:var(--soft)}
+.drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.drop .big{font-size:22px}.drop b{font-size:14px;word-break:break-word}.drop span{font-size:12px;color:var(--muted)}
+#files{list-style:none;margin:10px 0 0;padding:0;max-height:min(44vh,420px);overflow:auto;border:1px solid var(--border);border-radius:14px}
+#files li{display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--border);transition:background .15s}
+#files li:last-child{border-bottom:0}#files li:hover{background:var(--bg)}
+#files li.selected{background:var(--soft);box-shadow:inset 3px 0 0 var(--accent)}
+#files .name{flex:1;min-width:0;white-space:normal;overflow-wrap:anywhere}
+#files li.empty{display:block;color:var(--muted);font-size:13px}
+#files li button{padding:3px 9px;font-size:12px;border-radius:9px}
+.answer{font-size:17px;padding:14px 16px;border-radius:16px;background:var(--soft);border-left:4px solid var(--accent);white-space:pre-wrap}
+.answer.insufficient,.answer.invalid{background:var(--warnbg);border-color:var(--warn)}
+.label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.cites{list-style:none;padding:0;margin:0}.cites li{padding:6px 10px;font-size:13px;background:var(--bg);border-radius:10px;margin-bottom:4px}
+#result:empty::before{content:"Your answer will appear here, with the sources it came from.";color:var(--muted);font-size:14px}
+.busy{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;border:1px solid var(--border);background:var(--surface);font-size:13px;color:var(--muted);opacity:.55;transition:opacity .25s,box-shadow .25s}
+.busy.on{opacity:1;color:var(--text);border-color:var(--accent);box-shadow:0 0 0 4px var(--glow)}
+.busy.on .glass{animation:flip 2s ease-in-out infinite}.glass{display:inline-block}
+@keyframes flip{0%,55%{transform:rotate(0)}100%{transform:rotate(180deg)}}
+[data-tip]{position:relative}
+[data-tip]:hover::after,[data-tip]:focus-visible::after{content:attr(data-tip);position:absolute;top:calc(100% + 8px);right:0;white-space:nowrap;padding:5px 10px;border-radius:9px;background:var(--code);color:var(--codetx);font-size:12px;z-index:20;pointer-events:none}
+.tl[data-tip]:hover::after,.tl[data-tip]:focus-visible::after{left:0;right:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:860px){.shell{grid-template-columns:390px minmax(0,1fr)}.side{position:fixed;z-index:30;inset:0 auto 0 0;width:min(390px,88vw);transform:translateX(-102%);transition:transform .25s;box-shadow:var(--shadow)}.shell.open .side{transform:none}.content{padding:16px}.top{padding:10px 14px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="shell" id="shell">
+  <aside class="side" id="side" aria-label="Files">
+    <p class="brand">docs<b>.</b></p>
+    <p class="lead">Ask questions about your PDFs, spreadsheets and images. Nothing leaves this computer.</p>
+	    <div class="card">
+      <h2>Add files</h2>
+      <label class="drop"><b class="dt">Drop files or click to add</b><span>PDF · Excel · CSV · PNG · JPG</span>
+        <input id="upload" type="file" multiple accept=".pdf,.xlsx,.csv,.png,.jpg,.jpeg" aria-label="Upload files"></label>
+      <p class="hint" id="allowed"></p>
+      <div class="row" style="margin-top:10px"><button id="clearSession" data-tip="Temporary uploads vanish on restart; saved files stay until deleted">Clear session uploads</button></div>
+    </div>
+    <div class="card">
+      <h2>Your files</h2>
+      <div class="row">
+        <input id="search" type="search" placeholder="Search files" aria-label="Search files">
+        <select id="type" aria-label="Filter by type"><option value="">All types</option><option value="pdf">PDF</option><option value="xlsx">Excel</option><option value="csv">CSV</option><option value="png">PNG</option><option value="jpg">JPG</option></select>
+      </div>
+      <div class="row">
+        <button id="selAll" data-tip="Tick every file">Select all</button>
+        <button id="selFiltered" data-tip="Tick only the files shown">Select filtered</button>
+        <button id="clearSel">Clear</button>
+        <button id="refresh" data-tip="Re-read the repository folder">Refresh</button>
+      </div>
+      <ul id="files" aria-live="polite"></ul>
+      <p class="hint" id="count"></p>
+    </div>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button class="ib tl" id="sideBtn" data-tip="Show or hide the file panel" aria-label="Show or hide the file panel">☰</button>
+      <h1>Document Q&amp;A</h1>
+      <div class="busy" id="busy" data-tip="Lights up while the model or server is working" role="img" aria-label="Idle"><span class="glass">⏳</span><span id="busyT">Idle</span></div>
+      <button class="ib" id="themeBtn" data-tip="Switch light or dark" aria-label="Switch light or dark theme">☾</button>
+    </header>
+    <div class="content">
+      <section class="hero">
+        <p class="eyebrow">LOCAL · PRIVATE · OFFLINE</p>
+        <h2>Ask your <span>documents</span>.</h2>
+        <p class="lead">Tick files on the left, then ask. Answers use only the ticked files, with their sources.</p>
+      </section>
+      <div class="composer">
+        <textarea id="q" maxlength="1000" aria-label="Question" placeholder="Ask about the selected files…"></textarea>
+        <div class="bar">
+          <div class="row" style="margin:0"><label for="model" class="mini">Model</label><select id="model"></select><span id="selInfo" class="hint" style="margin:0"></span></div>
+          <button id="ask" class="primary">Ask ↗</button>
+        </div>
+      </div>
+      <p class="ainote">ⓘ Answers come from a local AI model and only from the files you tick. AI can make mistakes: check numbers and open the cited source before relying on them.</p>
+      <div class="row" style="margin:12px 0 0"><span class="mini">Try:</span>
+        <button class="chip" data-fill="What is the total for each category?">Totals by category</button>
+        <button class="chip" data-fill="What is the highest value?">Highest value</button>
+        <button class="chip" data-fill="Who prepared this document?">Who prepared it</button>
+      </div>
+      <div id="status" role="status"></div>
+      <section class="card"><h2>Answer</h2><div id="result" aria-live="polite"></div></section>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+OfflineAISuite/
+├── README.md, SETUP_STEPS.md, PORTABILITY_AND_SECURITY.md
+├── VERIFY_SUITE.py, CHECK_SUITE.bat
+├── START_PROJECT_1.bat, START_PROJECT_2.bat, START_PROJECT_3.bat
+├── application/
+│   ├── python/            embeddable Python 3.11.9
+│   ├── site-packages/     installed packages (copied with the suite)
+│   ├── wheelhouse/        offline wheels (for repair/rebuild)
+│   ├── requirements.in, requirements.lock.txt
+│   ├── llm_runtime/llama.cpp/
+│   ├── models/            .gguf files + MODEL_INVENTORY.md
+│   ├── ocr/tesseract/
+│   ├── shared/            common server/UI/security/cleanup code, static/vendor
+│   ├── scripts/
+│   ├── data/cache/, logs/, LICENSES/
+├── project_1_documents/   app/ repository/ data/{session_tmp,extracted,index}/ tests/fixtures/ logs/
+├── project_2_nl2sql/      app/ databases/ schemas/ data/schema_cache/ tests/fixtures/ logs/
+└── project_3_dashboard/   app/ workspace/active/ tests/fixtures/ logs/

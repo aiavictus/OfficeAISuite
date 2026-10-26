@@ -1,0 +1,26 @@
+0.00.705.828 I srv  llama_server: initializing ...
+0.00.705.838 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.706.355 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.709.672 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\Qwen3-4B-Q4_K_M.gguf'
+0.01.376.521 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.04.705.434 I cmn          init: llama threadpool init, n_threads = 4
+0.05.232.605 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.05.254.325 I srv  llama_server: model loaded
+0.05.254.340 I srv  llama_server: listening on http://127.0.0.1:8091
+0.06.296.458 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.06.296.566 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.10.067.373 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    256, progress = 0.33, t =   3.77 s / 67.89 tokens per second
+0.14.120.273 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    512, progress = 0.66, t =   7.82 s / 65.44 tokens per second
+0.18.594.801 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    768, progress = 0.99, t =  12.30 s / 62.45 tokens per second
+0.29.613.332 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =   9.34 t/s, tg_3s =   9.44 t/s
+0.32.656.956 I slot print_timing: id  0 | task 0 | n_gen =    131, tg =   9.53 t/s, tg_3s =  10.19 t/s
+0.35.738.796 I slot print_timing: id  0 | task 0 | n_gen =    161, tg =   9.57 t/s, tg_3s =   9.73 t/s
+0.38.742.990 I slot print_timing: id  0 | task 0 | n_gen =    191, tg =   9.63 t/s, tg_3s =   9.99 t/s
+0.41.848.270 I slot print_timing: id  0 | task 0 | n_gen =    221, tg =   9.64 t/s, tg_3s =   9.66 t/s
+0.43.015.345 I slot print_timing: id  0 | task 0 | prompt eval time =   12720.05 ms /   778 tokens (   16.35 ms per token,    61.16 tokens per second)
+0.43.015.356 I slot print_timing: id  0 | task 0 |        eval time =   23998.67 ms /   232 tokens (  103.89 ms per token,     9.63 tokens per second)
+0.43.015.357 I slot print_timing: id  0 | task 0 |       total time =   36718.72 ms /  1010 tokens
+0.43.015.358 I slot print_timing: id  0 | task 0 |    graphs reused =        231
+0.43.015.360 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.43.015.464 I slot      release: id  0 | task 0 | stop processing: n_tokens = 1009, truncated = 0
+3.03.033.021 I srv    operator(): operator(): cleaning up before exit...

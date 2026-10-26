@@ -1,0 +1,5 @@
+tag=b11609
+asset=llama-b11609-bin-win-cpu-x64.zip
+sha256=8708a7b81842333927f6377ac3f17ff8bba4dbe1ee0cf28dfd5e7a32e3a46b38
+version=0.6.0-dev (build 11609, commit fcac19079)
+source=https://github.com/ggml-org/llama.cpp/releases

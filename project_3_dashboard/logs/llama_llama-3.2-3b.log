@@ -1,0 +1,24 @@
+0.00.061.081 I srv  llama_server: initializing ...
+0.00.061.102 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.061.961 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.069.675 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\Llama-3.2-3B-Instruct-Q4_K_M.gguf'
+0.06.027.617 I cmn          init: llama threadpool init, n_threads = 4
+0.06.399.422 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.06.411.688 I srv  llama_server: model loaded
+0.06.411.699 I srv  llama_server: listening on http://127.0.0.1:8093
+0.07.395.681 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.07.395.782 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.15.130.808 I slot print_timing: id  0 | task 0 | prompt eval time =    4049.86 ms /   397 tokens (   10.20 ms per token,    98.03 tokens per second)
+0.15.130.818 I slot print_timing: id  0 | task 0 |        eval time =    3685.12 ms /    51 tokens (   73.70 ms per token,    13.57 tokens per second)
+0.15.130.820 I slot print_timing: id  0 | task 0 |       total time =    7734.98 ms /   448 tokens
+0.15.130.821 I slot print_timing: id  0 | task 0 |    graphs reused =         50
+0.15.130.822 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.15.130.945 I slot      release: id  0 | task 0 | stop processing: n_tokens = 447, truncated = 0
+4.27.797.477 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.965 (> 0.100 thold), f_keep = 0.859
+4.27.797.861 I slot launch_slot_: id  0 | task 53 | processing task, is_child = 0
+4.34.049.644 I slot print_timing: id  0 | task 53 | prompt eval time =     469.21 ms /    14 tokens (   33.51 ms per token,    29.84 tokens per second)
+4.34.049.655 I slot print_timing: id  0 | task 53 |        eval time =    5782.55 ms /    72 tokens (   81.44 ms per token,    12.28 tokens per second)
+4.34.049.657 I slot print_timing: id  0 | task 53 |       total time =    6251.75 ms /    86 tokens
+4.34.049.658 I slot print_timing: id  0 | task 53 |    graphs reused =        120
+4.34.049.659 I slot print_timing: id  0 | task 53 |   graph reallocs =          0    /     0        (same size) / (changed size)
+4.34.049.711 I slot      release: id  0 | task 53 | stop processing: n_tokens = 469, truncated = 0

@@ -1,0 +1,21 @@
+0.00.096.844 I srv  llama_server: initializing ...
+0.00.096.858 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.098.461 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.107.348 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\google_gemma-3-4b-it-Q4_K_M.gguf'
+0.01.312.718 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.07.799.411 I cmn          init: llama threadpool init, n_threads = 4
+0.08.299.249 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.08.320.498 I srv  llama_server: model loaded
+0.08.320.510 I srv  llama_server: listening on http://127.0.0.1:8091
+0.09.500.882 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.09.501.029 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.12.858.568 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    257, progress = 0.46, t =   3.36 s / 76.55 tokens per second
+0.13.625.665 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    304, progress = 0.54, t =   4.12 s / 73.70 tokens per second
+0.16.963.879 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =    556, progress = 0.99, t =   7.46 s / 74.50 tokens per second
+0.17.712.487 I slot print_timing: id  0 | task 0 | prompt eval time =    7610.73 ms /   560 tokens (   13.59 ms per token,    73.58 tokens per second)
+0.17.712.497 I slot print_timing: id  0 | task 0 |        eval time =     600.67 ms /     7 tokens (  100.11 ms per token,     9.99 tokens per second)
+0.17.712.499 I slot print_timing: id  0 | task 0 |       total time =    8211.40 ms /   567 tokens
+0.17.712.501 I slot print_timing: id  0 | task 0 |    graphs reused =          6
+0.17.712.503 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.17.712.626 I slot      release: id  0 | task 0 | stop processing: n_tokens = 566, truncated = 0
+0.47.735.993 I srv    operator(): operator(): cleaning up before exit...

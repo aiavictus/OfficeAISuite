@@ -1,0 +1,13 @@
+Month,Region,Product,Units,Revenue
+2025-01,North,Widget,100,2000
+2025-01,South,Widget,80,1600
+2025-02,North,Gadget,50,1500
+2025-02,South,Gadget,40,1200
+2025-03,North,Widget,120,2400
+2025-03,South,Gizmo,30,900
+2025-04,North,Gizmo,60,1800
+2025-04,South,Widget,90,1800
+2025-05,North,Gadget,70,2100
+2025-05,South,Gizmo,20,600
+2025-06,North,Widget,110,2200
+2025-06,South,Gadget,45,1350

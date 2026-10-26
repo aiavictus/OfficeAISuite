@@ -1,0 +1,2 @@
+{"description": "Sample shop: customers, products, orders and order lines.",
+ "tables": {"customers": {"description": "People who buy", "columns": {"city": "Home city"}}}}

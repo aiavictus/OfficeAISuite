@@ -1,0 +1,28 @@
+0.00.050.720 I srv  llama_server: initializing ...
+0.00.050.731 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.051.188 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.060.146 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\DeepSeek-R1-Distill-Qwen-7B-Q5_K_M.gguf'
+0.00.606.139 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.03.714.750 I cmn          init: llama threadpool init, n_threads = 4
+0.05.410.527 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.05.431.750 I srv  llama_server: model loaded
+0.05.431.762 I srv  llama_server: listening on http://127.0.0.1:8081
+0.06.359.085 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.06.359.176 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.22.224.080 I slot print_timing: id  0 | task 0 | n_gen =    100, tg =   6.47 t/s, tg_3s =   6.54 t/s
+0.25.329.826 I slot print_timing: id  0 | task 0 | n_gen =    119, tg =   6.41 t/s, tg_3s =   6.12 t/s
+0.28.455.376 I slot print_timing: id  0 | task 0 | n_gen =    138, tg =   6.36 t/s, tg_3s =   6.08 t/s
+0.31.541.890 I slot print_timing: id  0 | task 0 | n_gen =    157, tg =   6.34 t/s, tg_3s =   6.16 t/s
+0.34.641.502 I slot print_timing: id  0 | task 0 | n_gen =    176, tg =   6.31 t/s, tg_3s =   6.13 t/s
+0.37.751.407 I slot print_timing: id  0 | task 0 | n_gen =    195, tg =   6.29 t/s, tg_3s =   6.11 t/s
+0.40.872.328 I slot print_timing: id  0 | task 0 | n_gen =    214, tg =   6.27 t/s, tg_3s =   6.09 t/s
+0.43.998.945 I slot print_timing: id  0 | task 0 | n_gen =    233, tg =   6.26 t/s, tg_3s =   6.08 t/s
+0.47.012.563 I slot print_timing: id  0 | task 0 | n_gen =    250, tg =   6.21 t/s, tg_3s =   5.64 t/s
+0.50.043.907 I slot print_timing: id  0 | task 0 | n_gen =    269, tg =   6.22 t/s, tg_3s =   6.27 t/s
+0.53.185.584 I slot print_timing: id  0 | task 0 | n_gen =    289, tg =   6.23 t/s, tg_3s =   6.37 t/s
+0.54.917.620 I slot print_timing: id  0 | task 0 | prompt eval time =     568.77 ms /    10 tokens (   56.88 ms per token,    17.58 tokens per second)
+0.54.917.628 I slot print_timing: id  0 | task 0 |        eval time =   47989.63 ms /   300 tokens (  160.50 ms per token,     6.23 tokens per second)
+0.54.917.629 I slot print_timing: id  0 | task 0 |       total time =   48558.40 ms /   310 tokens
+0.54.917.631 I slot print_timing: id  0 | task 0 |    graphs reused =        298
+0.54.917.632 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.54.917.656 I slot      release: id  0 | task 0 | stop processing: n_tokens = 309, truncated = 0

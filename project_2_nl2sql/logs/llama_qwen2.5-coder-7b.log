@@ -1,0 +1,18 @@
+0.00.059.485 I srv  llama_server: initializing ...
+0.00.059.493 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.059.929 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.077.960 I srv    load_model: loading model 'C:\Users\iob\Music\matte\OfflineAISuite\application\models\Qwen2.5-Coder-7B-Instruct-Q5_K_M.gguf'
+0.00.669.922 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.04.247.597 I cmn          init: llama threadpool init, n_threads = 4
+0.05.923.015 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
+0.05.933.471 I srv  llama_server: model loaded
+0.05.933.482 I srv  llama_server: listening on http://127.0.0.1:8101
+0.07.330.502 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.07.330.567 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.14.254.665 I slot print_timing: id  0 | task 0 | prompt eval time =    4929.99 ms /   239 tokens (   20.63 ms per token,    48.48 tokens per second)
+0.14.254.679 I slot print_timing: id  0 | task 0 |        eval time =    1993.84 ms /    12 tokens (  181.26 ms per token,     5.52 tokens per second)
+0.14.254.681 I slot print_timing: id  0 | task 0 |       total time =    6923.83 ms /   251 tokens
+0.14.254.683 I slot print_timing: id  0 | task 0 |    graphs reused =         11
+0.14.254.684 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.14.254.791 I slot      release: id  0 | task 0 | stop processing: n_tokens = 250, truncated = 0
+0.26.571.269 I srv    operator(): operator(): cleaning up before exit...

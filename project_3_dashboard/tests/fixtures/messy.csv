@@ -1,0 +1,7 @@
+id,name,status,amount,country,notes
+1,Asha,paid,100.5,IN,
+2,Ben,paid,,IN,
+3,Chen,pending,75,IN,
+3,Chen,pending,75,IN,
+4,Dina,paid,20,IN,
+5,Evan,,60,IN,
